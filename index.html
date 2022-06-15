@@ -97,14 +97,14 @@
         </div class="container">
 
         <ul id="list" class="list-group container">
-          <li class="list-group-item-success d-flex justify-content-between py-2 container" style="list-style: none;">
-            <h4 class="flex-grow-1">Chapter 1</h4>
-            <button type="button" class="btn btn-danger mx-2" onclick="editchapter(this)" id="btn">
+          <li class="list-group-item-success d-flex justify-content-between py-2 container" style="list-style: none; width:100%;height: auto;align-items: center;">
+            <h4 class="flex-grow-1 " style ="overflow:auto;width:60%;max-width:58%">Chapter 1</h4>
+            <button type="button" class="btn btn-danger mx-2 " style="height:40px;" onclick="editchapter(this)" id="btn">
               Edit
             </button>
             <button
               type="button"
-              class="btn btn-outline-success mx-2"
+              class="btn btn-outline-success mx-2" style="height:40px;"
               onclick="removechapter(this)"
               id="edit"
             >
@@ -135,12 +135,17 @@
         const new_element = document.createElement("li");
         const hvalue = document.getElementsByTagName('h4')
         list.appendChild(new_element);
+        new_element.style.width ="100%"
+        new_element.style.maxWidth = "100%"
+        new_element.style.height ="auto"
+        new_element.style.alignItems ="center"
         new_element.className =
-          "list-group-item-success d-flex justify-content-between mt-3 py-2 container"; //to add more than one class we use this vrna we use class list.add
+          "list-group-item-success d-flex justify-content-between mt-3 container "; //to add more than one class we use this vrna we use class list.add
         new_element.innerHTML = `
-              <h4 class="flex-grow-1">${nitin}</h4>
-              <button type="button" class="btn btn-danger mx-2 " onclick="editchapter(this)">Edit</button>
-              <button type="button" class="btn btn-outline-success mx-2" onclick="removechapter(this)">Remove</button>`;
+              <h3 class="flex-grow-1" style ="overflow:auto;width:60%;max-width:58%;">${nitin}</h3>
+              <button type="button" class="btn btn-danger mx-2" style="height:40px;" onclick="editchapter(this)">Edit</button>
+              <button type="button" class="btn btn-outline-success mx-2" style="height:40px;"
+    top: 28%;" onclick="removechapter(this)">Remove</button>`;
       }
       
     function removechapter(removen){
